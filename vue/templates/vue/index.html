@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vuex@2.0.0/dist/vuex.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app1"></div>
+  <div id="app2"></div>
+  <div id="app3"></div>
+  <div id="app4"></div>
+  <script>
+    const store = new Vuex.Store({
+      state: {
+        data: [
+          {% for item in data  %}
+            {
+              title: '{{ item.title }}',
+              pub_date: '{{ item.pub_date }}',
+              text: '{{ item.text }}',
+            },
+          {% endfor %}
+        ],
+      },
+    });
+
+    const cardText = {
+      name: 'card-text',
+      props: ['text'],
+      render(h) {
+        return h(
+          'p',
+          {
+            domProps: {
+              innerHTML: this.text,
+            },
+          },
+        );
+      },
+    };
+
+    const renderElem = (h, context) => {
+      return h(
+        'div',
+        {},
+        [
+          h(
+            cardText,
+            {
+              props: {
+                text: context.$store.state.data[context.$options.el.slice(-1)].text,
+              },
+            },
+          ),
+        ]
+      );
+    };
+
+    new Vue({
+      el: '#app1',
+      components: {
+        cardText,
+      },
+      store,
+      render(h) {
+        return renderElem(h, this);
+      },
+    });
+
+    new Vue({
+      el: '#app2',
+      components: {
+        cardText,
+      },
+      store,
+      render(h) {
+        return renderElem(h, this);
+      },
+    });
+
+    new Vue({
+      el: '#app3',
+      components: {
+        cardText,
+      },
+      store,
+      render(h) {
+        return renderElem(h, this);
+      },
+    });
+
+    new Vue({
+      el: '#app4',
+      components: {
+        cardText,
+      },
+      store,
+      render(h) {
+        return renderElem(h, this);
+      },
+    });
+  </script>
+</body>
+</html>
