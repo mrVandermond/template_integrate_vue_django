@@ -27,10 +27,11 @@
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.39.2",
     "webpack-bundle-tracker": "^0.4.2-beta",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   },
   "scripts": {
-    "dev": "webpack --watch --progress --config webpack.config.js --env.fast",
+    "dev": "webpack-dev-server --inline --progress --config webpack.config.js --env.fast",
     "build": "webpack --progress --config webpack.config.js"
   },
   "repository": {

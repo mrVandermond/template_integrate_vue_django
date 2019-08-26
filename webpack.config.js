@@ -17,7 +17,7 @@ const bundlesPath = path.resolve(projectDir, 'bundles');
 // Собираем .bem файлы из папки bundles
 const entries = {
 // Файл для конкретного template
-  app: './vue/static/vue/js/app/main.js',
+  main: './vue/static/vue/js/app/main.js',
 };
 fs.readdirSync(bundlesPath).forEach((dirname) => {
   const dirPath = path.resolve(bundlesPath, dirname);
@@ -48,10 +48,14 @@ module.exports = (env) => {
         new OptimizeCSSAssetsPlugin(),
       ],
     },
+    devServer: {
+      hot: true,
+      quiet: true,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    },
     entry: entries,
     output: {
-      // Заменить на "filename + '.js'"
-      filename: 'index.js',
+      filename: `${filename}.js`,
       path: output,
       publicPath: '',
     },
@@ -146,6 +150,7 @@ module.exports = (env) => {
     config.devtool = undefined;
     config.optimization = { minimizer: [] };
     config.output.path = path.resolve(projectDir, 'vue', 'static', 'vue');
+    config.output.publicPath = 'http://localhost:8080';
   }
   return config;
 };

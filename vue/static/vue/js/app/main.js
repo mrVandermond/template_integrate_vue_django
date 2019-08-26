@@ -15,7 +15,31 @@ Vue.prototype.$bus = new Vue();
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#schedule1',
+  store,
+  render(h) {
+    return h(App);
+  },
+});
+
+new Vue({
+  el: '#schedule2',
+  store,
+  render(h) {
+    return h(App);
+  },
+});
+
+new Vue({
+  el: '#schedule3',
+  store,
+  render(h) {
+    return h(App);
+  },
+});
+
+new Vue({
+  el: '#schedule4',
   store,
   render(h) {
     return h(App);

@@ -1,1 +1,1 @@
-{"status":"done","chunks":{"app":[{"name":"index.js","path":"/home/user/template_integrate_vue_django/vue/static/vue/index.js"}]}}
+{"status":"error","publicPath":"http://localhost:8080","error":"ModuleNotFoundError","message":"Module not found: Error: Can't resolve 'vue' in '/home/user/template_integrate_vue_django/vue/static/vue/js/app'"}
