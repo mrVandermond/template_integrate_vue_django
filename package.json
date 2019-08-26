@@ -1,34 +1,46 @@
 {
-  "name": "integrate_vue",
+  "name": "template_integrate_vue_django",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "webpack --progress --watch --env.fast --config webpack.config.js",
-    "build": "webpack --progress --config webpack.config.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "vue": "^2.6.10",
-    "vuex": "^3.1.1"
-  },
+  "description": "integrate django with vue",
+  "main": ".eslintrc.js",
+  "dependencies": {},
   "devDependencies": {
     "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.2.0",
     "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-loader": "^3.0.0",
-    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-vue": "^5.2.3",
-    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.3.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.39.2",
     "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-cli": "^3.3.7"
-  }
+  },
+  "scripts": {
+    "dev": "webpack --watch --progress --config webpack.config.js --env.fast",
+    "build": "webpack --progress --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrVandermond/template_integrate_vue_django.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrVandermond/template_integrate_vue_django/issues"
+  },
+  "homepage": "https://github.com/mrVandermond/template_integrate_vue_django#readme"
 }
