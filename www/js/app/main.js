@@ -1,47 +1,102 @@
 import Vue from 'libs/vue.2.6.10.min';
-import Vuex from 'libs/vuex.3.0.0.min';
-import App from './App.vue';
+import App from './App';
+import store from './store';
+import * as types from './store/types';
 
-Vue.use(Vuex);
+window.onload = () => {
+  // Даем доступ к BusEvent из любого компонента Vue через this.$bus
+  Vue.prototype.$bus = new Vue();
+  // Даем доступ ко всем types для удобства использования Vuex
+  Vue.prototype.$types = types;
 
-const store = new Vuex.Store({
-  state: {
-    data: [],
-  },
-});
+  /* eslint-disable no-new */
+  new Vue({
+    el: '#schedule1',
+    store,
+    render(h) {
+      return h(
+        App,
+        {
+          props: {
+            index: this.$options.el.slice(-1),
+          },
+        },
+      );
+    },
+  });
 
-// Даем доступ к BusEvent из любого компонента Vue через this.$bus
-Vue.prototype.$bus = new Vue();
+  new Vue({
+    el: '#schedule2',
+    store,
+    render(h) {
+      return h(
+        App,
+        {
+          props: {
+            index: this.$options.el.slice(-1),
+          },
+        },
+      );
+    },
+  });
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#schedule1',
-  store,
-  render(h) {
-    return h(App);
-  },
-});
+  new Vue({
+    el: '#schedule3',
+    store,
+    render(h) {
+      return h(
+        App,
+        {
+          props: {
+            index: this.$options.el.slice(-1),
+          },
+        },
+      );
+    },
+  });
 
-new Vue({
-  el: '#schedule2',
-  store,
-  render(h) {
-    return h(App);
-  },
-});
+  new Vue({
+    el: '#schedule4',
+    store,
+    render(h) {
+      return h(
+        App,
+        {
+          props: {
+            index: this.$options.el.slice(-1),
+          },
+        },
+      );
+    },
+  });
 
-new Vue({
-  el: '#schedule3',
-  store,
-  render(h) {
-    return h(App);
-  },
-});
+  new Vue({
+    el: '#schedule5',
+    store,
+    render(h) {
+      return h(
+        App,
+        {
+          props: {
+            index: this.$options.el.slice(-1),
+          },
+        },
+      );
+    },
+  });
 
-new Vue({
-  el: '#schedule4',
-  store,
-  render(h) {
-    return h(App);
-  },
-});
+  new Vue({
+    el: '#schedule6',
+    store,
+    render(h) {
+      return h(
+        App,
+        {
+          props: {
+            index: this.$options.el.slice(-1),
+          },
+        },
+      );
+    },
+  });
+};

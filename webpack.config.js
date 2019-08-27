@@ -110,6 +110,7 @@ module.exports = (env) => {
                       },
                     },
                   ],
+                  'stage-2',
                 ],
               },
             },
