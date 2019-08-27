@@ -27,7 +27,7 @@ export default {
         index: this.index,
         text: newText,
       });
-      this.$bus.$emit('change:text', {
+      this.$bus.$emit('text:change', {
         index: this.index,
         text: newText,
       });

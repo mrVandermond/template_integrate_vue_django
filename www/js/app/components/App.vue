@@ -4,6 +4,7 @@
       'background-color': color,
     }"
     class="schedule"
+    @click="onclickRoot"
   >
     <p class="schedule__title">
       {{ article.title }}
@@ -22,7 +23,7 @@
 </template>
 
 <script>
-import BaseButton from './components/BaseButton';
+import BaseButton from './BaseButton';
 
 export default {
   name: 'App',
@@ -46,12 +47,15 @@ export default {
     },
   },
   created() {
-    this.$bus.$on('change:text', this.onchangeText);
+    this.$bus.$on('text:change', this.onchangeText);
   },
   beforeDestroy() {
-    this.$bus.$off('change:text', this.onchangeText);
+    this.$bus.$off('text:change', this.onchangeText);
   },
   methods: {
+    onclickRoot() {
+      this.$bus.$emit('counter:change');
+    },
     onchangeText({ index, text }) {
       if (index !== this.index) {
         this.color = '#ff0';
