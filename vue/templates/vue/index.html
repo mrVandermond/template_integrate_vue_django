@@ -14,12 +14,9 @@
     class="data"
   ></div>
   <div id="counter"></div>
-  <div id="schedule1"></div>
-  <div id="schedule2"></div>
-  <div id="schedule3"></div>
-  <div id="schedule4"></div>
-  <div id="schedule5"></div>
-  <div id="schedule6"></div>
+  {% for index in '123456' %}
+    <div class="schedule{{ index }}"></div>
+  {% endfor %}
   {% render_bundle 'main' 'js' %}
 </body>
 </html>

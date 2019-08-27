@@ -9,96 +9,25 @@ window.onload = () => {
   // Даем доступ ко всем types для удобства использования Vuex
   Vue.prototype.$types = types;
 
-  /* eslint-disable no-new */
-  new Vue({
-    el: '#schedule1',
-    store,
-    render(h) {
-      return h(
-        App,
-        {
-          props: {
-            index: Number(this.$options.el.slice(-1)) - 1,
-          },
-        },
-      );
-    },
-  });
+  const countSchedules = store.state.data.length;
 
-  new Vue({
-    el: '#schedule2',
-    store,
-    render(h) {
-      return h(
-        App,
-        {
-          props: {
-            index: Number(this.$options.el.slice(-1)) - 1,
+  for (let i = 0; i < countSchedules; i += 1) {
+    /* eslint-disable no-new */
+    new Vue({
+      el: `.schedule${i + 1}`,
+      store,
+      render(h) {
+        return h(
+          App,
+          {
+            props: {
+              index: i,
+            },
           },
-        },
-      );
-    },
-  });
-
-  new Vue({
-    el: '#schedule3',
-    store,
-    render(h) {
-      return h(
-        App,
-        {
-          props: {
-            index: Number(this.$options.el.slice(-1)) - 1,
-          },
-        },
-      );
-    },
-  });
-
-  new Vue({
-    el: '#schedule4',
-    store,
-    render(h) {
-      return h(
-        App,
-        {
-          props: {
-            index: Number(this.$options.el.slice(-1)) - 1,
-          },
-        },
-      );
-    },
-  });
-
-  new Vue({
-    el: '#schedule5',
-    store,
-    render(h) {
-      return h(
-        App,
-        {
-          props: {
-            index: Number(this.$options.el.slice(-1)) - 1,
-          },
-        },
-      );
-    },
-  });
-
-  new Vue({
-    el: '#schedule6',
-    store,
-    render(h) {
-      return h(
-        App,
-        {
-          props: {
-            index: Number(this.$options.el.slice(-1)) - 1,
-          },
-        },
-      );
-    },
-  });
+        );
+      },
+    });
+  }
 
   new Vue({
     el: '#counter',

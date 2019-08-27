@@ -1,6 +1,6 @@
 import Vuex from 'libs/vuex.3.0.0.min';
 import Vue from 'libs/vue.2.6.10.min';
-import mutations from './mutations';
+import * as types from './types';
 
 Vue.use(Vuex);
 
@@ -10,7 +10,11 @@ const store = new Vuex.Store({
   state: {
     data: JSON.parse(data.dataset.data),
   },
-  mutations,
+  mutations: {
+    [types.SET_TEXT](state, { text, index }) {
+      Vue.set(state.data, index, { ...state.data[index], text });
+    },
+  },
 });
 
 export default store;
