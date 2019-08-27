@@ -122,7 +122,7 @@ window.onload = () => {
               this.counter += 1;
             },
           },
-          template: '<div>{{ counter }}</div>',
+          template: '<div>Кол-во кликов: {{ counter }}</div>',
         },
         {
           class: {
