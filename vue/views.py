@@ -9,37 +9,37 @@ def index(request):
     {
       "title": "Заголовок1",
       "pub_date": "2019-10-05",
-      "text": "some text"
+      "text": "Текст"
     },
     {
       "title": "Заголовок2",
       "pub_date": "2019-04-15",
-      "text": "same text"
+      "text": "Некоторый текст"
     },
     {
       "title": "Заголовок3",
       "pub_date": "2019-03-05",
-      "text": "some text"
+      "text": "Текст для примера"
     },
     {
       "title": "Заголовок4",
       "pub_date": "2019-01-20",
-      "text": "some text"
+      "text": "Текст не для примера"
     },
     {
       "title": "Заголовок5",
       "pub_date": "2019-06-13",
-      "text": "some text"
+      "text": "chill"
     },
     {
       "title": "Заголовок6",
       "pub_date": "2019-10-16",
-      "text": "some text"
+      "text": "Отличный текст"
     },
     {
       "title": "Заголовок7",
       "pub_date": "2019-06-23",
-      "text": "some text"
+      "text": "Просто текст"
     }
   ]
   context = {

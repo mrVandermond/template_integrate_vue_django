@@ -18,7 +18,7 @@ window.onload = () => {
         App,
         {
           props: {
-            index: this.$options.el.slice(-1),
+            index: Number(this.$options.el.slice(-1)) - 1,
           },
         },
       );
@@ -33,7 +33,7 @@ window.onload = () => {
         App,
         {
           props: {
-            index: this.$options.el.slice(-1),
+            index: Number(this.$options.el.slice(-1)) - 1,
           },
         },
       );
@@ -48,7 +48,7 @@ window.onload = () => {
         App,
         {
           props: {
-            index: this.$options.el.slice(-1),
+            index: Number(this.$options.el.slice(-1)) - 1,
           },
         },
       );
@@ -63,7 +63,7 @@ window.onload = () => {
         App,
         {
           props: {
-            index: this.$options.el.slice(-1),
+            index: Number(this.$options.el.slice(-1)) - 1,
           },
         },
       );
@@ -78,7 +78,7 @@ window.onload = () => {
         App,
         {
           props: {
-            index: this.$options.el.slice(-1),
+            index: Number(this.$options.el.slice(-1)) - 1,
           },
         },
       );
@@ -93,7 +93,7 @@ window.onload = () => {
         App,
         {
           props: {
-            index: this.$options.el.slice(-1),
+            index: Number(this.$options.el.slice(-1)) - 1,
           },
         },
       );
