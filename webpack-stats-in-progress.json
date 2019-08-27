@@ -1,1 +1,1 @@
-{"status":"error","publicPath":"http://localhost:8080","error":"ModuleNotFoundError","message":"Module not found: Error: Can't resolve 'vue' in '/home/user/template_integrate_vue_django/vue/static/vue/js/app'"}
+{"status":"done","chunks":{"main":[{"name":"main/main_92d5740405282f50bba3.js","path":"/home/user/template_integrate_vue_django/www/webpack_bundle/main/main_92d5740405282f50bba3.js"},{"name":"main/main_92d5740405282f50bba3.js.map","path":"/home/user/template_integrate_vue_django/www/webpack_bundle/main/main_92d5740405282f50bba3.js.map"}]}}

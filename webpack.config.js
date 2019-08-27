@@ -10,14 +10,14 @@ const webpack = require('webpack');
 
 // Отредактировать env как нужно
 const projectDir = process.env.PROJECT_DIR;
-const output = path.resolve(projectDir, 'vue', 'static', 'vue', 'js');
+const output = path.resolve(projectDir, 'www', 'webpack_bundle');
 
 const bundlesPath = path.resolve(projectDir, 'bundles');
 
 // Собираем .bem файлы из папки bundles
 const entries = {
 // Файл для конкретного template
-  main: './vue/static/vue/js/app/main.js',
+  main: './www/js/app/main.js',
 };
 fs.readdirSync(bundlesPath).forEach((dirname) => {
   const dirPath = path.resolve(bundlesPath, dirname);
@@ -71,6 +71,7 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.js', '.vue', '.json'],
       alias: {
+        vue$: path.resolve('./www/js/libs/vue.2.6.10.min.js'),
         jquery$: path.resolve('./www/js/libs/jquery/1.11.1/jquery.min.js'),
         libs: path.resolve('./www/js/libs/'),
         css: path.resolve('./www/css/'),
@@ -83,7 +84,7 @@ module.exports = (env) => {
           loader: 'eslint-loader',
           enforce: 'pre',
           include: [
-            path.resolve(projectDir, 'vue', 'static', 'vue'),
+            path.resolve(projectDir, 'www', 'js', 'app'),
           ],
           options: {
             formatter: EslintFriendlyFormatter,
@@ -149,8 +150,8 @@ module.exports = (env) => {
     config.mode = 'development';
     config.devtool = undefined;
     config.optimization = { minimizer: [] };
-    config.output.path = path.resolve(projectDir, 'vue', 'static', 'vue');
-    config.output.publicPath = 'http://localhost:8080';
+    config.output.path = path.resolve(projectDir, 'www', 'webpack_bundle');
+    config.output.publicPath = 'http://localhost:8080/';
   }
   return config;
 };

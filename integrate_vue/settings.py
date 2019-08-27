@@ -15,7 +15,9 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'www'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -31,7 +33,7 @@ ALLOWED_HOSTS = []
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
-        "BUNDLE_DIR_NAME": "/",
+        "BUNDLE_DIR_NAME": "webpack_bundle/",
         "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats-in-progress.json"),
         "POLL_INTERVAL": 0.1,
         "TIMEOUT": None,
